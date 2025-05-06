@@ -1,0 +1,49 @@
+{
+  "azureOpenaiApiEndpoint": "$AZURE_OPENAI_API_ENDPOINT",
+  "azureOpenaiApiKey": "$AZURE_OPENAI_API_KEY",
+  "azureOpenaiApiVersion": "$AZURE_OPENAI_API_VERSION",
+  "azureOpenaiApiInstanceName": "$AZURE_OPENAI_API_INSTANCE_NAME",
+  "azureOpenaiApiEmbeddingsDeploymentName": "$AZURE_OPENAI_API_EMBEDDINGS_DEPLOYMENT_NAME",
+  "azureOpenaiApiDeploymentName": "$AZURE_OPENAI_API_DEPLOYMENT_NAME",
+  "promptsstepgenerate": [
+    {
+      "step1": [
+        "You are an assistant for generate a software documentation,",
+        "Given this array with every file description in a software project,",
+        "that documentation I want to create a Markdown documentation section Summary",
+        "explaining this antitheft solution knowing that the stack is",
+        "Java 21, VNIOT Library (Based on Spring), Reactive Extensions,",
+        "ONNX model for detecting, Telemetry with OpenTelemetry, kafka and MQTT.",
+        "This workload is deployed and executed in a IOT Hub, receives messages with events from another workload",
+        "(dataextractor) and process the messages using the MLModel in ONNX,",
+        "the output is sended to another MQTT Topic for alerting, and",
+        "the whole execution pipeline is stored and sended to kafka for",
+        "re-training purposes.",
+        "Add emojis in the titles.",
+        "Dont display info about Deployments, Monitoring or Impact",
+        "(this will be done in other sections in future)",
+        "array: {arrayDescriptions}      Context: {context}      Answer:"
+      ]
+    },
+    {
+      "step2": [
+        "You are an assistant for generate a software documentation, ",
+        "Given this ARRAY with every file description in a software project, ",
+        "that documentation I want to create a Markdown documentation section Getting Started, ",
+        "explaining this antitheft solution knowing that the stack is Java 21, VNIOT Library (Based on Spring), Reactive Extensions, ONNX model for detecting, Telemetry with OpenTelemetry, kafka and MQTT.",
+        "This workload is deployed and executed in a IOT Hub, receives messages with events from another workload (dataextractor) and ",
+        "process the messages using the MLModel in ONNX, the output is sended to another MQTT Topic for alerting, and the whole execution pipeline is stored and sended to kafka for retrain the models and get ",
+        "some metrics.    List the folders (use the ARRAY context) of the solution with the rootname vniot-antitheft-app.",
+        "Draw a Diagram with the TagSuscriber UseCase (use mermaid). ",
+        "The main business files in solution are TagSuscriber, LocalCache, OnnxService, others are for boundaries, explain the lifecicle of the requests in localcache, performance and optimization.",
+        "Explain that the ONNX ml model is loaded from resources directory, and it's provisioning using an internal tooling with CICD workflow.",
+        "Dont display info about Deployments, Monitoring or Impact (this will be done in other sections in future)",
+        "ARRAY: {arrayDescriptions} ",
+        "Context: {context} ",
+        "Answer:"
+      ]
+    }
+  ],
+  "inputFolder": "./doc",
+  "outputFolder": "./output"
+}
